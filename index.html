@@ -1,0 +1,199 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Eli Lilly — Dashboard</title>
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <!-- Sidebar -->
+  <aside class="sidebar" id="sidebar">
+    <div class="sidebar-logo">
+      <div class="logo-icon">L</div>
+      <span class="logo-text">Eli Lilly</span>
+    </div>
+    <nav class="sidebar-nav">
+      <a href="#" class="nav-item active" data-section="overview">
+        <span class="nav-icon">&#9632;</span> Overview
+      </a>
+      <a href="#" class="nav-item" data-section="pipeline">
+        <span class="nav-icon">&#9670;</span> Pipeline
+      </a>
+      <a href="#" class="nav-item" data-section="research">
+        <span class="nav-icon">&#9679;</span> Research
+      </a>
+      <a href="#" class="nav-item" data-section="reports">
+        <span class="nav-icon">&#9650;</span> Reports
+      </a>
+      <a href="#" class="nav-item" data-section="settings">
+        <span class="nav-icon">&#9881;</span> Settings
+      </a>
+    </nav>
+    <div class="sidebar-footer">
+      <div class="user-avatar">JD</div>
+      <div class="user-info">
+        <span class="user-name">Jane Doe</span>
+        <span class="user-role">Senior Scientist</span>
+      </div>
+    </div>
+  </aside>
+
+  <!-- Main content -->
+  <main class="main">
+    <!-- Topbar -->
+    <header class="topbar">
+      <button class="menu-btn" id="menuBtn">&#9776;</button>
+      <h1 class="topbar-title" id="pageTitle">Overview</h1>
+      <div class="topbar-actions">
+        <input class="search-box" type="search" placeholder="Search..." />
+        <button class="btn-primary">+ New Report</button>
+      </div>
+    </header>
+
+    <!-- Content -->
+    <div class="content">
+      <!-- Stat cards -->
+      <section class="stats-grid">
+        <div class="stat-card">
+          <div class="stat-label">Active Compounds</div>
+          <div class="stat-value">1,284</div>
+          <div class="stat-delta positive">&#9650; 12% vs last quarter</div>
+        </div>
+        <div class="stat-card">
+          <div class="stat-label">Clinical Trials</div>
+          <div class="stat-value">67</div>
+          <div class="stat-delta positive">&#9650; 5 new this month</div>
+        </div>
+        <div class="stat-card">
+          <div class="stat-label">FDA Submissions</div>
+          <div class="stat-value">8</div>
+          <div class="stat-delta neutral">&#9679; No change</div>
+        </div>
+        <div class="stat-card">
+          <div class="stat-label">Revenue (YTD)</div>
+          <div class="stat-value">$28.4B</div>
+          <div class="stat-delta positive">&#9650; 9.3% YoY</div>
+        </div>
+      </section>
+
+      <!-- Charts row -->
+      <section class="charts-row">
+        <div class="card chart-card">
+          <div class="card-header">
+            <h2>Pipeline Progress</h2>
+            <span class="badge">2026</span>
+          </div>
+          <div class="pipeline-bars">
+            <div class="pipeline-row">
+              <span class="pipeline-label">Discovery</span>
+              <div class="bar-track"><div class="bar" style="width:88%" data-val="88%"></div></div>
+              <span class="pipeline-pct">88%</span>
+            </div>
+            <div class="pipeline-row">
+              <span class="pipeline-label">Phase I</span>
+              <div class="bar-track"><div class="bar" style="width:72%" data-val="72%"></div></div>
+              <span class="pipeline-pct">72%</span>
+            </div>
+            <div class="pipeline-row">
+              <span class="pipeline-label">Phase II</span>
+              <div class="bar-track"><div class="bar phase2" style="width:55%" data-val="55%"></div></div>
+              <span class="pipeline-pct">55%</span>
+            </div>
+            <div class="pipeline-row">
+              <span class="pipeline-label">Phase III</span>
+              <div class="bar-track"><div class="bar phase3" style="width:34%" data-val="34%"></div></div>
+              <span class="pipeline-pct">34%</span>
+            </div>
+            <div class="pipeline-row">
+              <span class="pipeline-label">Regulatory</span>
+              <div class="bar-track"><div class="bar regulatory" style="width:20%" data-val="20%"></div></div>
+              <span class="pipeline-pct">20%</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="card chart-card">
+          <div class="card-header">
+            <h2>Therapeutic Areas</h2>
+            <span class="badge">Active</span>
+          </div>
+          <div class="donut-wrapper">
+            <svg class="donut" viewBox="0 0 160 160">
+              <circle cx="80" cy="80" r="60" class="donut-bg" />
+              <circle cx="80" cy="80" r="60" class="donut-seg seg1" stroke-dasharray="113 264" stroke-dashoffset="0" />
+              <circle cx="80" cy="80" r="60" class="donut-seg seg2" stroke-dasharray="85 264" stroke-dashoffset="-113" />
+              <circle cx="80" cy="80" r="60" class="donut-seg seg3" stroke-dasharray="66 264" stroke-dashoffset="-198" />
+              <text x="80" y="76" class="donut-center-label">Areas</text>
+              <text x="80" y="92" class="donut-center-value">5</text>
+            </svg>
+            <ul class="donut-legend">
+              <li><span class="dot dot1"></span> Oncology — 43%</li>
+              <li><span class="dot dot2"></span> Diabetes — 32%</li>
+              <li><span class="dot dot3"></span> Immunology — 25%</li>
+            </ul>
+          </div>
+        </div>
+      </section>
+
+      <!-- Recent activity -->
+      <section class="card activity-card">
+        <div class="card-header">
+          <h2>Recent Activity</h2>
+          <button class="btn-ghost">View all</button>
+        </div>
+        <table class="activity-table">
+          <thead>
+            <tr>
+              <th>Trial / Study</th>
+              <th>Therapeutic Area</th>
+              <th>Phase</th>
+              <th>Status</th>
+              <th>Updated</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>LY3372689 — Alzheimer's</td>
+              <td>Neuroscience</td>
+              <td>Phase III</td>
+              <td><span class="status active">Active</span></td>
+              <td>Apr 17, 2026</td>
+            </tr>
+            <tr>
+              <td>LY3437943 — Obesity</td>
+              <td>Diabetes & Obesity</td>
+              <td>Phase II</td>
+              <td><span class="status active">Active</span></td>
+              <td>Apr 15, 2026</td>
+            </tr>
+            <tr>
+              <td>LY3819253 — Breast Cancer</td>
+              <td>Oncology</td>
+              <td>Phase III</td>
+              <td><span class="status review">In Review</span></td>
+              <td>Apr 12, 2026</td>
+            </tr>
+            <tr>
+              <td>LY2951742 — Migraine</td>
+              <td>Neuroscience</td>
+              <td>Approved</td>
+              <td><span class="status approved">Approved</span></td>
+              <td>Apr 10, 2026</td>
+            </tr>
+            <tr>
+              <td>LY3127760 — Lupus</td>
+              <td>Immunology</td>
+              <td>Phase I</td>
+              <td><span class="status pending">Pending</span></td>
+              <td>Apr 8, 2026</td>
+            </tr>
+          </tbody>
+        </table>
+      </section>
+    </div>
+  </main>
+
+  <script src="app.js"></script>
+</body>
+</html>
